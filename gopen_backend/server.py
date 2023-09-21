@@ -1,6 +1,9 @@
 from fastapi import FastAPI
-import uvicorn
 from routers import tests,auth,comment,course
+from dotenv import load_dotenv
+import uvicorn, os
+
+load_dotenv()
 
 app = FastAPI()
 app.include_router(tests.router,prefix="/test",tags=["test"])
@@ -13,4 +16,4 @@ app.include_router(comment.router,prefix="/comment",tags=["comment"])
 def ping() -> str:
    return "PONG"
 
-uvicorn.run(app, host='0.0.0.0', port=8080)
+uvicorn.run(app, host='0.0.0.0', port=int(os.getenv("SERVER_PORT",8080)))
