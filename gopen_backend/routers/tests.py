@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from fake_data.fake_data import get_fake_courses
+from utils.fake_data import get_fake_courses
 from typing import List
 
 
