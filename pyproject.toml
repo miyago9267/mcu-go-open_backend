@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "mcu-go-open-backend"
+version = "0.1.0"
+description = "the web backend for mcu go-open"
+authors = ["miyago9267 <miyagomizugen@gmail.com>"]
+readme = "README.md"
+packages = [{include = "mcu_go_open_backend"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
